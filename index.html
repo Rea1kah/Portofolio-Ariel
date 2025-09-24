@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE PORTOFOLIO</title>
+
+    <!-- Menggunakan CDN TAILWIND-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  -->
+
+    <!-- Menggunakan TAILWIND CLI-->
+    <link rel="stylesheet" href="./src/style.css">
+
+    <!--  Perintah untuk mengaktifkan Tailwind CSS -->
+    <!--  npx @tailwindcss/cli -i ./src/input.css -o ./src/style.css --watch -->
+
+    <style>
+        .button-container {
+            display: inline-block;
+            position: relative;
+        }
+    
+        .button-container svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-gray-600">
+    <header class="z-50 sticky top-0 bg-gray-950 py-5 px-15">
+            <nav class="w-full flex flex-row mx-auto">
+                <div class="uppercase basis-1/4 transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-2"> <!-- LOGO -->
+                    <a href="#hero">
+                        <span class="font-extrabold text-white" >M. Ariel</span>
+                        <span class="font-extrabold text-sky-400">Afriza</span>
+                    </a>
+                </div>
+                <div class="basis-full flex items-center justify-around sm:relative left-6"> <!-- Link -->
+                    <a href="#schedule" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Schedule</span></a>
+                    <a href="#services" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Services</span></a>
+                    <a href="#portfolio" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Portfolios</span></a>
+                    <a href="#experiences" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Experiences</span></a>
+                    <a href="#contact" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Contact</span></a>
+                </div>
+                <div class="basis-1/4 flex items-center justify-end"> <!-- Dark Mode -->
+                    <span class="button-container">
+                        <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                class="fill-sky-400/20"></path>
+                            <path
+                                d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                class="fill-sky-500"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                class="fill-sky-500"></path>
+                        </svg>
+                    </span>
+                </div>
+            </nav>    
+    </header>
+
+    <main id="hero" class="relative -top-20"> <!-- Main Content -->
+        <div class="bg-gray-950"> <!-- Hero Section -->
+            <div class="mx-auto flex h-screen items-center w-9/12">
+                <div class="basis-1/2 opacity-0 hidden-before">
+                    <div class="flex items-center hover:cursor-context-menu transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2">
+                        <svg class="stroke-gray-400 stroke-2 h-5 w-5">
+                            <line x1="0" y1="10px" x2="10px" y2="10px"/>
+                        </svg>
+                        <h2 class="uppercase text-xs font-extralight tracking-[.5em]">
+                            my name is
+                        </h2>
+                    </div>
+                    <h3 class="font-bold text-white text-4xl transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:cursor-context-menu uppercase">
+                        <span>M. Ariel</span>
+                        <span class="text-blue-700">Afriza</span>
+                    </h3>
+
+                    <div class="mx-auto w-32 h-auto bg-gradient-to-br from-pink-300 via-purple-200 to-indigo-500 
+                    shadow-xl rounded-3xl mt-4 px-6 py-6 border border-indigo-200 text-gray-800 
+                    sm:w-72 md:w-80 lg:w-96 lg:relative lg:right-7 xl:w-[450px] 
+                    transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center uppercase tracking-wide">
+                            About Me
+                        </h2>
+
+                        <div class="space-y-3">
+                            <p>
+                            <span class="font-semibold text-pink-600">NIM</span> <span class="font-semibold text-pink-600 relative left-1.5">:</span> <span class="relative left-1">241401073</span>
+                            </p>
+                            <p>
+                            <span class="font-semibold text-pink-600">Kelas</span> <span class="font-semibold text-pink-600 relative">:</span> <span>Kom B</span>
+                            </p>
+                            <p>
+                            <span class="font-semibold text-pink-600">Hobi</span> <span class="font-semibold text-pink-600 relative left-0.5">:</span> <span class="relative left-0.5">Membaca & Coding</span>
+                            </p>
+                            <p class="italic text-gray-700 border-t border-indigo-200 pt-3">
+                            <span class="font-semibold text-pink-600">Moto Hidup:</span><br>
+                            <p class="uppercase italic">“F*ck Motivation, Just stay consistent!”</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-row space-x-5 mt-4"> 
+                        <a href="https://www.instagram.com/marielafriza/" target="_blank"><img class="w-6 h-6 transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2" src="./img/Instagram.svg" alt="Ig"></a> 
+                        <a href="https://github.com/Rea1kah2" target="_blank"><img class="w-6 h-6 transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2" src="./img/Github.svg" alt="Github"></a>
+                        <a href="https://www.linkedin.com/feed/" target="_blank"><img class="w-6 h-6 transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2" src="./img/Linkedin.svg" alt="Linkedin"></a>
+                        <a href="https://x.com/realkah__" target="_blank">
+                            <img class="w-6 h-6 transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2" src="./img/Twitter.svg" alt="X">
+                        </a>
+                        <a href="https://www.tiktok.com/@realkah_1" target="_blank">
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg class="w-7.5 h-7.5 relative right-2.5 bottom-0.5 transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <title>TikTok icon outline</title>
+                            <g fill="none" stroke="#D3D3D3" stroke-width="4" stroke-linejoin="round">
+                                <path d="M78 12v40.5c0 0-7.2-1.8-12.6 1.1-6.1 3.2-10.4 9.8-10.4 17.2
+                                        0 11.2 9.1 20.3 20.3 20.3 11.2 0 20.3-9.1 20.3-20.3V39h10.4V12H78z"/>
+                            </g>
+                            </svg>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="basis-1/2 flex justify-center opacity-0 hidden-before md:justify-center lg:-translate-x-10 ">
+                    <div class="relative lg:relative left-15">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-full blur-2xl opacity-60 animate-pulse">
+                        </div>
+                        <img src="./img/Ariel.jpg" 
+                            alt="Foto Ariel" 
+                            class="relative w-72 h-72 object-cover rounded-full border-4 border-amber-100 shadow-2xl transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover-float-smooth">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JADWAL -->
+        <section id="schedule" class="bg-white py-20">
+        <div class="w-full hidden-before mx-auto px-8">
+            <!-- Judul -->
+            <div class="flex flex-col items-center">
+            <div class="flex items-center">
+                <svg class="stroke-gray-400 stroke-2 h-5 w-5">
+                <line x1="0" y1="10px" x2="10px" y2="10px" />
+                </svg>
+                <h2 class="uppercase text-xs font-extralight tracking-[.5em] ml-2">
+                Schedule
+                </h2>
+            </div>
+            <h3 class="text-3xl text-gray-800 mt-2 uppercase">📅 Weekly Lecture Schedule</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10">
+                <!-- Senin -->
+                <div class="shadow-lg rounded-lg  bg-gray-950 p-6 hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+                    <h3 class="text-xl font-extrabold text-gray-400 mb-3 underline underline-offset-4 decoration-2">Senin</h3>
+                    <p class="text-gray-500 font-medium">08:00 - 09:40 • Praktek Musik Dunia 1</p>
+                    <p class="text-gray-500 mb-3">👩‍🏫 Sapna Br Sitopu S.Pd., M.Sn</p>
+                    <p class="text-gray-500 font-medium">10:30 - 13:00 • Manajemen</p>
+                    <p class="text-gray-500">👩‍🏫 Ayulita Ramadhani M.Si</p>
+                </div>
+
+                <!-- Selasa -->
+                <div class="shadow-lg rounded-lg bg-blue-600 p-6 hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+                    <h3 class="text-xl font-extrabold text-gray-200 mb-3 underline underline-offset-4 decoration-2">Selasa</h3>
+                    <p class="text-gray-300 font-medium">08:30 - 10:10 • Praktikum Pemrograman Web</p>
+                    <p class="text-gray-300 mb-3">👩‍🏫 Dewi Sartika Br Ginting S.Kom., M.Kom</p>
+                    <p class="text-gray-300 font-medium">13:00 - 15:30 • Praktikum Basis Data</p>
+                    <p class="text-gray-300">👨‍🏫 Insidini Fawwaz M.Kom</p>
+                </div>
+
+                <!-- Rabu -->
+                <div class="shadow-lg rounded-lg bg-gradient-to-r from-yellow-300 to-orange-600 p-6 hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+                    <h3 class="text-xl font-extrabold text-gray-900 mb-3 underline underline-offset-4 decoration-2">Rabu</h3>
+                    <p class="text-gray-900 font-medium">08:00 - 10:30 • Pemrograman Web</p>
+                    <p class="text-gray-900 mb-3">👩‍🏫 Dewi Sartika Br Ginting S.Kom., M.Kom</p>
+                    <p class="text-gray-900 font-medium">14:40 - 17:10 • Basis Data</p>
+                    <p class="text-gray-900">👨‍🏫 Insidini Fawwaz M.Kom</p>
+                </div>
+
+                <!-- Kamis -->
+                <div class="shadow-lg rounded-lg bg-gradient-to-r from-green-400 to-emerald-700 p-6 hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+                    <h3 class="text-xl font-extrabold text-white mb-3 underline underline-offset-4 decoration-2">Kamis</h3>
+                    <p class="text-gray-100 font-medium">08:00 - 09:40 • Etika Profesi</p>
+                    <p class="text-gray-100 mb-3">👩‍🏫 Dr. Ir. Elviawaty Muisa Zamzami S.T., M.T., M.M., IPU</p>
+                    <p class="text-gray-100 font-medium">13:00 - 15:30 • Kecerdasan Buatan</p>
+                    <p class="text-gray-100">👩‍🏫 Dr. Amalia S.T., M.T</p>
+                </div>
+
+                <!-- Jumat -->
+                <div class="shadow-lg rounded-lg bg-blue-600 p-6 hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+                    <h3 class="text-xl font-extrabold text-gray-200 mb-3 underline underline-offset-4 decoration-2">Jumat</h3>
+                    <p class="text-gray-300 font-medium">08:00 - 09:40 • Wirausaha Digital</p>
+                    <p class="text-gray-300 mb-3">👩‍🏫 Dr. T. Henny Febriana Harumy S.Kom., M.Kom</p>
+                    <p class="text-gray-300 font-medium">13:50 - 16:20 • Struktur Data</p>
+                    <p class="text-gray-300">👩‍🏫 Anandhini Medianty Nababan S.Kom., M.T</p>
+                </div>
+
+                <div class="flex items-start bg-gradient-to-r from-green-300 via-emerald-500 to-cyan-800 shadow-lg rounded-lg p-6 hover:scale-[1.02] transition-transform duration-300 hover:cursor-pointer">        
+                    <div class="w-3/4 text-gray-800">
+                        <h3 class="w-1/4 font-extrabold text-gray-900 text-xl mb-3 underline underline-offset-4 decoration-2">Sabtu</h3>
+                        <p class="font-medium">09:00 - 12:00 • Bootcamp Web Development</p>
+                        <p class="text-gray-700 mb-2">👨‍🏫 Mentor Codepolitan</p>
+                        <p class="font-medium">14:00 - 16:00 • Bootcamp Artificial Intelligence</p>
+                        <p class="text-gray-700">👨‍🏫 Mentor Dicoding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+        <div id="services" class="bg-sky-100 py-20"> <!-- Services -->
+            <div class="w-9/12 mx-auto ">
+                <div class="flex flex-col place-items-center "> <!-- Judul -->
+                    <div>
+                        <div class="flex items-center transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+                            <svg class="stroke-gray-400 stroke-2 h-5 w-5">
+                                <line x1="0" y1="10px" x2="10px" y2="10px" />
+                            </svg>
+                            <h2 class="uppercase text-xs font-extralight tracking-[.5em]">
+                                Services
+                            </h2>
+                        </div>
+                        <h3 class="text-3xl transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+                            Specialized in
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-10 py-10"> <!-- Cards -->
+                    <div class="shadow-lg rounded-lg bg-white transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-gray-100">
+                        <div class="flex flex-col items-center py-10 px-10">
+                            <div class="h-10 w-10 bg-blue-100 rounded-2xl p-2">
+                                <img class="w-full" src="./img/crown.svg" alt="crown">
+                            </div>
+                            <h4 class="text-black mt-5">
+                                UI/UX Design
+                            </h4>
+                            <p class="text-center font-extralight text-sm mt-2 text-gray-500">
+                                Turn what you have in mind of a digital product into reality. For any platforms you consider.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-lg bg-white transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-gray-100">
+                        <div class="flex flex-col items-center py-10 px-10">
+                            <div class="h-10 w-10 bg-blue-100 rounded-2xl p-2">
+                                <img class="w-full" src="./img/app.svg" alt="crown">
+                            </div>
+                            <h4 class="text-black mt-5">
+                                Application Development
+                            </h4>
+                            <p class="text-center font-extralight text-sm mt-2 text-gray-500">
+                                Standard designing, building and implementing your applications with documentations.
+                            </p>
+                        </div>
+                    </div>
+                <div class="shadow-lg rounded-lg bg-white transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-gray-100">
+                    <div class="flex flex-col items-center py-10 px-10 ">
+                        <div class="h-10 w-10 bg-blue-100 rounded-2xl p-2">
+                            <img class="w-full" src="./img/globe.svg" alt="crown">
+                        </div>
+                        <h4 class="text-black mt-5">
+                            Web Development
+                        </h4>
+                        <p class="text-center font-extralight text-sm mt-2 text-gray-500">
+                            Create and mantain your websites and also take care of its performance and traffic capacity.  
+                        </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="portfolio" class="py-40 bg-gray-950"> <!-- Portfolio -->
+            <div class="w-9/12 mx-auto hidden-before">
+                <div class="flex flex-col transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu"> <!-- Judul -->
+                        <div class="flex items-center ">
+                            <svg class="stroke-gray-400 stroke-2 h-5 w-5">
+                                <line x1="0" y1="10px" x2="10px" y2="10px" />
+                            </svg>
+                            <h2 class="uppercase text-xs font-extralight tracking-[.5em]">
+                                My Works
+                            </h2>
+                        </div>
+                        <h3 class="text-3xl text-white ">
+                            Featured Portfolios
+                        </h3>
+                </div>
+
+                <div class="grid grid-cols-4 gap-20 mt-20"> <!-- Cards -->
+                    <div class="rounded-lg shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-slate-500">
+                        <img class="object-cover h-48 opacity-50" src="img/companyprofile.png" alt="Company Profile">
+                        <div class="bg-white py-2 px-4">
+                            <h4 class="text-sm font-medium text-gray-800">Company Profile</h4>
+                            <h5 class="text-sm font-mono">Tailwind CSS</h5>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-slate-500">
+                        <img class="object-cover h-48 opacity-50" src="img/dashboard.png" alt="Company Profile">
+                        <div class="bg-white py-2 px-4">
+                            <h4 class="text-sm font-medium text-gray-800">Dashboard</h4>
+                            <h5 class="text-sm font-mono">React JS</h5>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-slate-500">
+                        <img class="object-cover h-48 opacity-50" src="img/lms.png" alt="Company Profile">
+                        <div class="bg-white py-2 px-4">
+                            <h4 class="text-sm font-medium text-gray-800">LMS</h4>
+                            <h5 class="text-sm font-mono">PHP</h5>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer hover:bg-slate-500">
+                        <img class="object-cover h-48 opacity-50" src="img/agency.png" alt="Company Profile">
+                        <div class="bg-white py-2 px-4">
+                            <h4 class="text-sm font-medium text-gray-800">Agency Website</h4>
+                            <h5 class="text-sm font-mono">Wordpress</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div id="experiences" class="py-40 bg-gray-950"> <!-- Experiences -->
+            <div class="mx-auto w-9/12 flex flex-row items-center hidden-before">
+                <div class="basis-1/3">
+                    <div class="flex flex-col"> <!-- Judul -->
+                        <div class="flex items-center transition-transform duration-500 hover:scale-115 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+                            <svg class="stroke-gray-400 stroke-2 h-5 w-5">
+                                <line x1="0" y1="10px" x2="10px" y2="10px" />
+                            </svg>
+                            <h2 class="uppercase text-xs font-extralight tracking-[.5em]">
+                                Career Path
+                            </h2>
+                        </div>
+                        <h3 class="text-3xl text-white transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+                            Experiences
+                        </h3>
+
+                        <div class="flex flex-col gap-y-5 mt-10 pr-20">
+                            <a class="hover:bg-blue-200 hover:text-blue-800 bg-white w-full p-4 rounded-lg flex flex-row justify-between transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer" href="#experiences"><span>Apple</span> ></a>
+                            <a class="hover:bg-blue-200 hover:text-blue-800 bg-white w-full p-4 rounded-lg flex flex-row justify-between transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer" href="#experiences"><span>Google</span >></a>
+                            <a class="hover:bg-blue-200 hover:text-blue-800 bg-white w-full p-4 rounded-lg flex flex-row justify-between transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer" href="#experiences"><span>Nvidia</span >></a>
+                            <a class="hover:bg-blue-200 hover:text-blue-800 bg-white w-full p-4 rounded-lg flex flex-row justify-between transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-pointer" href="#experiences"><span>Tesla</span> ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="basis-2/3 pl-20">
+                    <h4 class="text-2xl font-bold text-gray-200">Front-End Developer Apple.Inc</h4>
+                    <h5 class="text-sm font-light ">California, United States</h5>
+                    <p class="mt-5 text-light text-gray-200">January 2025 - Present : Part-Time</p>
+                    <div class="mt-2">
+                        <span class="border-white border border-solid px-2 py-1 rounded-md text-sm font-mono">Swift</span>
+                        <span class="border-white border border-solid px-2 py-1 rounded-md text-sm font-mono">Go</span>
+                    </div>
+                    <hr class="my-5">
+                    <ul class="list-disc list-inside leading-10">
+                        <li>Improving overall website performance for mobile user,</li>
+                        <li>Collaborate with back-end developers and web designers to improve usability,</li>
+                        <li>add voice search feature for mobile app using dictation,</li>
+                        <li>Developing an admin panel to comply with spatial computing for Vision Pro.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="bg-white pt-40 pb-20 h-full"> <!-- Contact -->
+            <div class="mx-auto w-9/12 flex flex-row items-center">
+                <div class="basis-1/2">
+                    <div class="flex flex-col"> <!-- Judul -->
+                        <div class="flex items-center transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+                            <svg class="stroke-gray-400 stroke-2 h-5 w-5">
+                                <line x1="0" y1="10px" x2="10px" y2="10px" />
+                            </svg>
+                            <h2 class="uppercase text-xs font-extralight tracking-[.5em]">
+                                Inquiry
+                            </h2>
+                        </div>
+                        <h3 class="text-3xl text-gray-800 transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">
+                            Contact Me
+                        </h3>
+                    </div>
+                    <form action="#" class="max-w-md mt-10">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold">Name</label>
+                            <input class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" type="text">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-semibold">Email</label>
+                            <input class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" type="text">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-semibold">Message</label>
+                            <textarea class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-mono font-semibold py-2 px-4 rounded-md w-full hover:cursor-pointer">Send Email</button>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="basis-1/2 ml-10">
+                    <div class="flex flex-row gap-5 p-5 ">
+                        <div class="w-15 h-10 p-2 bg-blue-100 rounded-2xl">
+                            <img class="w-full h-full object-cover" src="img/pin.svg" alt="pin">
+                        </div>
+                        <div>
+                            <h4 class="text-lg text-gray-800 font-medium transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">Address</h4>
+                            <h5 class="font-thin">Jalan Dr. T. Mansyur No. 9, Kelurahan Padang Bulan, Kecamatan Medan Baru, Kota Medan, Sumatera Utara, Indonesia.</h5>
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-5 p-5">
+                        <div class="w-10 h-10 p-2 bg-blue-100 rounded-2xl ">
+                            <img class="w-full" src="img/phone call.svg" alt="whatsapp">
+                        </div>
+                        <div>
+                            <h4 class="text-lg text-gray-800 font-medium transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">Whatsapp</h4>
+                            <h5 class="font-thin">(+62) 89621569116</h5>
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-5 p-5">
+                        <div class="w-10 h-10 p-2 bg-blue-100 rounded-2xl">
+                            <img class="w-full" src="img/mail.svg" alt="email">
+                        </div>
+                        <div>
+                            <h4 class="text-lg text-gray-800 font-medium transition-transform duration-500 hover:scale-110 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">Email</h4>
+                            <h5 class="font-thin">arielafriza88@gmail.com</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 py-5 -mt-20 text-center text-gray-200">
+        <p class="transition-transform duration-300 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">&copy; 2025 Universitas Sumatera Utara, All rights reserved</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                    entry.target.classList.remove('hidden-before');
+                } else {
+                    entry.target.classList.remove('animate-fadeInUp');
+                    entry.target.classList.add('hidden-before');
+                }   
+            });
+        }, { threshold: 0.2 });
+
+         document.querySelectorAll('.hidden-before').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "./animasi.css"
+
+/* Perintah Untuk menjalankan TAILWIND CSS */
+
+/* 
+    1. Install terlebih dahulu file tailwind css nya
+    => install tailwindcss @tailwindcss/cli
+
+    2. import tailwind dengan cara import dari file css bernama input.css di folder src
+    => @import "tailwindcss";
+
+    3. Jalankan Tailwind yang tadi dengan perintah berikut:
+    => npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+    4. buat link dari output.css pada file utama html kita
+    => <link rel="stylesheet" href="./src/output.css>
+
+    5. Akhirnya tailwind siap digunakan!
+*/
+
+/* @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.hidden-before {
+  opacity: 0;
+  transform: translateY(20px);
+} */
