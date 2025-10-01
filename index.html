@@ -14,18 +14,60 @@
     <!--  Perintah untuk mengaktifkan Tailwind CSS -->
     <!--  npx @tailwindcss/cli -i ./src/input.css -o ./src/style.css --watch -->
 
-    <style>
-        .button-container {
-            display: inline-block;
-            position: relative;
-        }
-    
+    <style>    
         .button-container svg {
             width: 24px;
             height: 24px;
         }
+
+        /* Transisi Ikon */
+        .icon-sun, .icon-moon {
+        position: absolute; /* tumpuk */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        inset: 0;
+        margin: auto;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        /* default dark mode → moon aktif */
+        .icon-sun {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        }
+        .icon-moon {
+        opacity: 0;
+        transform: scale(0.5) rotate(-90deg);
+        }
+
+        /* light mode → sun aktif */
+        .theme-light .icon-moon {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        }
+        .theme-light .icon-sun {
+        opacity: 0;
+        transform: scale(0.5) rotate(90deg);
+        }
+
+        /* aksesibilitas & tampilan button untuk Dark & Light theme */
+        #theme-toggle { 
+            background: transparent; border: none; 
+            padding: 0; 
+            cursor: pointer; 
+        }
+
+        #theme-toggle:focus { 
+            outline: 3px solid rgba(59,130,246,0.25); 
+            outline-offset: 2px; 
+        }
+
     </style>
+
 </head>
+
 <body class="bg-gray-800 text-gray-600">
     <header class="z-50 sticky top-0 bg-gray-950 py-5 px-15">
             <nav class="w-full flex flex-row mx-auto">
@@ -35,6 +77,7 @@
                         <span class="font-extrabold text-sky-400">Afriza</span>
                     </a>
                 </div>
+
                 <div class="basis-full flex items-center justify-around sm:relative left-6"> <!-- Link -->
                     <a href="#schedule" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Schedule</span></a>
                     <a href="#services" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Services</span></a>
@@ -42,21 +85,54 @@
                     <a href="#experiences" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Experiences</span></a>
                     <a href="#contact" class="transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2"><span>Contact</span></a>
                 </div>
-                <div class="basis-1/4 flex items-center justify-end"> <!-- Dark Mode -->
-                    <span class="button-container">
-                        <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+
+                <!-- ICON DARK & LIGHT THEME -->
+                <div class="basis-1/4 flex items-center justify-end">
+                <button id="theme-toggle" class="button-container" type="button" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+                    <!-- ICON MOON (default terlihat) -->
+                        <g class="icon-moon">
                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
-                                class="fill-sky-400/20"></path>
+                            d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                            class="fill-sky-400/20"></path>
                             <path
-                                d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
-                                class="fill-sky-500"></path>
+                            d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                            class="fill-sky-500"></path>
                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
-                                class="fill-sky-500"></path>
-                        </svg>
-                    </span>
+                            d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                            class="fill-sky-500"></path>
+                        </g>
+
+                        <!-- ICON SUN (disembunyikan default) -->
+                        <g class="icon-sun">
+                            <!-- lingkaran matahari -->
+                            <circle cx="12" cy="12" r="5" fill="url(#gradSun)" />
+
+                            <!-- cahaya (rays) -->
+                            <g stroke="#FACC15" stroke-width="2">
+                                <line x1="12" y1="2" x2="12" y2="6" />
+                                <line x1="12" y1="18" x2="12" y2="22" />
+                                <line x1="2" y1="12" x2="6" y2="12" />
+                                <line x1="18" y1="12" x2="22" y2="12" />
+                                <line x1="4.2" y1="4.2" x2="7" y2="7" />
+                                <line x1="17" y1="17" x2="19.8" y2="19.8" />
+                                <line x1="4.2" y1="19.8" x2="7" y2="17" />
+                                <line x1="17" y1="7" x2="19.8" y2="4.2" />
+                            </g>
+
+                            <!-- gradient definisi -->
+                            <defs>
+                                <radialGradient id="gradSun" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#FDE047" /> <!-- kuning terang -->
+                                <stop offset="100%" stop-color="#F59E0B" /> <!-- oranye keemasan -->
+                                </radialGradient>
+                            </defs>
+                            </g>
+                    </svg>
+                </button>
                 </div>
+
+
             </nav>    
     </header>
 
@@ -91,7 +167,7 @@
                             <span class="font-semibold text-pink-600">NIM</span> <span class="font-semibold text-pink-600 relative left-1.5">:</span> <span class="relative left-1">241401073</span>
                             </p>
                             <p>
-                            <span class="font-semibold text-pink-600">Kelas</span> <span class="font-semibold text-pink-600 relative">:</span> <span>Kom B</span>
+                            <span class="font-semibold text-pink-600">Kelas</span> <span class="font-semibold text-pink-600 relative">:</span> <span>Kom A</span>
                             </p>
                             <p>
                             <span class="font-semibold text-pink-600">Hobi</span> <span class="font-semibold text-pink-600 relative left-0.5">:</span> <span class="relative left-0.5">Membaca & Coding</span>
@@ -382,19 +458,22 @@
                             Contact Me
                         </h3>
                     </div>
-                    <form action="#" class="max-w-md mt-10">
+                    <form id="contact-form" class="max-w-md mt-10">
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-semibold">Name</label>
-                            <input class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" type="text">
+                            <input class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" type="text" id="name" name="name" required>
                         </div>
+
                         <div class="mb-4">
                             <label for="email" class="block text-gray-700 font-semibold">Email</label>
-                            <input class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" type="text">
+                            <input class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" type="email" id="email" name="email" required>
                         </div>
+
                         <div class="mb-4">
                             <label for="message" class="block text-gray-700 font-semibold">Message</label>
-                            <textarea class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" name="" id="" cols="30" rows="10"></textarea>
+                            <textarea class="bg-blue-100 rounded-md px-4 py-2 w-full focus:ring-blue-900 text-black" name="message" id="message" cols="30" rows="10" required></textarea>
                         </div>
+
                         <div>
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-mono font-semibold py-2 px-4 rounded-md w-full hover:cursor-pointer">Send Email</button>
                         </div>
@@ -440,7 +519,25 @@
         <p class="transition-transform duration-300 hover:scale-105 hover:shadow-2xl animate-fadeInUp hover:cursor-context-menu">&copy; 2025 Universitas Sumatera Utara, All rights reserved</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
+        // Fungsionalitas Contact Me
+        (function(){
+            emailjs.init("xMXfDLZk-2ttj-kYN")
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            emailjs.sendForm("service_lfm81zq", "template_fuksgpw", this)
+            .then(() => {
+                alert('✅ Message sent successfully!');
+                this.reset();
+            }, (error) => {
+                alert('❌ Failed to send message: ' + JSON.stringify(error));
+            });
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -454,6 +551,26 @@
         }, { threshold: 0.2 });
 
          document.querySelectorAll('.hidden-before').forEach(el => observer.observe(el));
+
+         /* Dark * Light Theme */
+         const toggleBtn = document.getElementById("theme-toggle");
+         const root = document.documentElement;
+         const kunci_temanya = "preferred-theme";
+
+        //  Load Saved Theme
+        const simpan_tema = localStorage.getItem(kunci_temanya);
+        if(simpan_tema === "light"){
+            root.classList.add("theme-light");
+        } else{
+            if(window.matchMedia("(prefers-color-scheme: light)").matches){
+                root.classList.add("theme-light");
+            }
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            const isLight = root.classList.toggle("theme-light");
+            localStorage.setItem(kunci_temanya, isLight ? "light" : "dark")
+        });
     </script>
 
 </body>
